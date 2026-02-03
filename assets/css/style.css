@@ -91,7 +91,7 @@ a {
     position: absolute;
     color: #000;
     right: 0.1%;
-    min-width: 8rem;
+    min-width: 3rem;
     background-color: #ffffff;
     box-shadow: 1px 1px 4px #aaaaaa;
 }
@@ -103,6 +103,7 @@ a {
 
 #header-subnav li a {
     display: block;
+    width: 100%;
     margin: 0;
     font-size: clamp(0.7rem, 2vw, 0.9rem);
     padding: 0.5rem;
