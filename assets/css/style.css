@@ -4,38 +4,117 @@
     box-sizing: border-box;
 }
 
-
+/* ===== HEADER ===== */
 #header {
-    height: 76px;
-    border-bottom: 2px double gray;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    border-bottom: 0.125rem double gray;
+    box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.3);
+}
+
+#header-content {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+a {
+    text-decoration: none;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 #header-content a {
+    margin-left: 3rem;
     text-decoration: none;
-    display: flex;  /*Sử dụng flex để căn chỉnh vị trí*/
-    align-items: center; /* căn giữa theo chiều dọc */
-    width: 360px;
-    margin-top: 10px;
-    margin-left: 10px;
-    gap: 5px; /* khoảng cách logo - chữ */
+    display: flex;
+    align-items: center;
+    width: min(80%, 500px);
+
+    padding: 0.75rem 0;
+    gap: 0.75rem; /* Khoảng cách giữa các phần tử */
 }
+
 
 #header-content a > #logo {
-    width: 70px;
-    height: 70px;
-    
+    height: 3rem;
+    margin-left: 0.75rem;
 }
 
+
+#header-content a > #logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+
 #header-content a > #header-title {
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+
+#header-content a > #header-title > h1 {
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
     color: rgb(45, 166, 231);
 }
 
-#header-content a > #logo img {
+
+#header-content a > #header-title > h4 {
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+    color: grey;
+}
+
+
+/* ===== MOBILE ======*/
+
+#header-nav {
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+#header-nav li {
+    list-style: none;
+}
+
+#header-nav > #menu > a{
+    margin: 0;
+    font-weight: bold;
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    color: rgb(45, 166, 231);
+    position: relative;
+}
+
+#header-subnav {
+    display: none;
+    position: absolute;
+    color: #000;
+    right: 0.1%;
+    min-width: 3rem;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 4px #aaaaaa;
+}
+
+/*pseudo focus--within hoạt động khi click vào và giữ focus */
+#header-nav > #menu:focus-within #header-subnav {
+    display: block;
+}
+
+#header-subnav li a {
+    display: block;
     width: 100%;
-    height: 100%;
+    margin: 0;
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+    padding: 0.5rem;
+    color: #000;
     object-fit: contain;
+}
+
+
+/* ========= BODY ========*/
+
+#content {
+    min-height: 500px;
+    background-color: azure;
 }
